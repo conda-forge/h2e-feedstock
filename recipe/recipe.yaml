@@ -1,6 +1,7 @@
 context:
   name: h2e
-  version: "1.0.0"
+  version: "1.1.0"
+  python_min: "3.12"
 
 package:
   name: ${{ name }}
@@ -8,7 +9,7 @@ package:
 
 source:
   url: https://gitlab.com/earthscope/public/epic/passoft/h2e/-/archive/v${{ version }}/h2e-v${{ version }}.tar.gz
-  sha256: 8aa0141326c60a9266c072c01e727a5f0c6e475be2b8835f2508aa0b0d288d43
+  sha256: 78dca4767bc77ba38fc402a18ff137da904c13b1d55ec3a3d0842baee228a2e6
 
 build:
   noarch: python
@@ -22,7 +23,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - setuptools >=77
   run:
     - python >=${{ python_min }}
     - __unix
